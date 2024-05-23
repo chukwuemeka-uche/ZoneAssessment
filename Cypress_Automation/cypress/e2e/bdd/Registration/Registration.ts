@@ -4,6 +4,7 @@ import HomePage from "../../../pom/HomePage"
 import LogoutPage from "../../../pom/LogoutPage";
 import RegistrationPage from "../../../pom/RegistrationPage";
 import SuccessPage from "../../../pom/SuccessPage";
+import { testData } from "../../../support/index";
 
 const homePage = new HomePage();
 const registrationPage = new RegistrationPage();
@@ -11,8 +12,16 @@ const successPage = new SuccessPage();
 const accountPage = new AccountPage();
 const logoutPage = new LogoutPage();
 
-Given("a user is on the ecommerce playground", () => {
+let userData: testData;
+beforeEach(function () {
+    cy.fixture('testParameters.json').then((data: testData) => {
+        userData = data;
+    })
     cy.openSite();
+})
+
+Given("a user is on the ecommerce playground", () => {
+    homePage.assertEcommercePage();
 })
 
 When("the user clicks on Shop by Category", () => {
@@ -20,7 +29,7 @@ When("the user clicks on Shop by Category", () => {
 })
 
 When("the user clicks on a Category", () => {
-    cy.selectCategory(" MP3 Players")
+    cy.selectCategory(userData.category.item)
 })
 
 When("the user hovers on a product", () => {
@@ -36,11 +45,11 @@ When("the user clicks on Register", () => {
 })
 
 When("the user fills the required details", () => {
-    registrationPage.enterFirstName("Test")
-    registrationPage.enterLastName("User");
-    registrationPage.enterEmail("Sample" + '.' + "User");
-    registrationPage.enterPhoneNumber("803075244");
-    registrationPage.enterAndConfirmPassword("Pa33w0rd!")
+    registrationPage.enterFirstName(userData.userDetails.firstName)
+    registrationPage.enterLastName(userData.userDetails.lastName);
+    registrationPage.enterEmail(userData.userDetails.firstName + '.' + userData.userDetails.lastName);
+    registrationPage.enterPhoneNumber(userData.userDetails.phoneNumber);
+    registrationPage.enterAndConfirmPassword(userData.userDetails.password)
 })
 
 When("the user completes their registration", () => {

@@ -12,3 +12,16 @@ declare global {
         }
     }
 }
+
+//This interface allows Cypres pick data from the fixture file
+export interface testData{
+    "category": {
+        "item": string
+    },
+    "userDetails": {
+        "firstName": string,
+        "lastName": string,
+        "phoneNumber": string,
+        "password": string
+    }
+}
