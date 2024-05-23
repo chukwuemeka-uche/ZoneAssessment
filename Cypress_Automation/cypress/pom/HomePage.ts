@@ -11,6 +11,13 @@ class HomePage {
         cy.get('#notification-box-top .col:nth-child(2)').click()
     }
 
+    //Doing this on first landing
+    assertEcommercePage()
+    {
+        cy.url().should('eq','https://ecommerce-playground.lambdatest.io/')
+    }
+
+    //This URL is after successful log out
     assertHomeURL()
     {
         cy.url().should('eq','https://ecommerce-playground.lambdatest.io/index.php?route=common/home')
