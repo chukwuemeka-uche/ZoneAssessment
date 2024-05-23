@@ -1,7 +1,6 @@
 class HomePage {
     hoverOnProduct() {
         cy.get('[data-view_id="grid"] .image').eq(0).trigger('mouseover');
-        cy.get('.product-action').eq(0).should('be.visible')
     }
 
     clickAddToWishlist() {

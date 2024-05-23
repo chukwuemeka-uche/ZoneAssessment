@@ -34,10 +34,11 @@ When("the user adds the product to a wishlist", () => {
 When("the user clicks on Register", () => {
     homePage.clickRegisterButton()
 })
+
 When("the user fills the required details", () => {
     registrationPage.enterFirstName("Test")
     registrationPage.enterLastName("User");
-    registrationPage.enterEmail("Test" + '.' + "User");
+    registrationPage.enterEmail("Sample" + '.' + "User");
     registrationPage.enterPhoneNumber("803075244");
     registrationPage.enterAndConfirmPassword("Pa33w0rd!")
 })
