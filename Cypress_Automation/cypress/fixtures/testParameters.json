@@ -1,0 +1,11 @@
+{
+    "category": {
+        "item": " MP3 Players"
+    },
+    "userDetails": {
+        "firstName": "Test",
+        "lastName": "User",
+        "phoneNumber": "803075244",
+        "password": "Pa33w0rd!"
+    }
+}
