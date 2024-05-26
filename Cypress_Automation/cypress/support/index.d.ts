@@ -13,8 +13,8 @@ declare global {
     }
 }
 
-//This interface allows Cypres pick data from the fixture file
-export interface testData{
+//This interface allows Cypress pick data from the fixture file
+export interface testData {
     "category": {
         "item": string
     },
