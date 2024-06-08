@@ -21,6 +21,7 @@ export default defineConfig({
   e2e: {
     baseUrl: "https://ecommerce-playground.lambdatest.io/",
     setupNodeEvents,
+    retries: 1,
     specPattern: 'cypress/e2e/bdd/**/*.feature',
     watchForFileChanges: false
   },
