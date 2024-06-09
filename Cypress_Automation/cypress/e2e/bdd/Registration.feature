@@ -1,6 +1,6 @@
-    Feature: Registration
+Feature: Registration
     A user should be able to registrt on the application
-    
+
     Scenario: Register as a new user
         Given a user is on the ecommerce playground
         When the user clicks on Shop by Category
