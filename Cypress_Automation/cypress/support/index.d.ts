@@ -2,13 +2,10 @@ export { };
 declare global {
     namespace Cypress {
         interface Chainable {
-            //   login(email: string, password: string): Chainable<void>
-            //   drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-            //   dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-            //   visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
             openSite(): Chainable<void>
             clickShopByCategory(): Chainable<void>
             selectCategory(category: string): Chainable<void>
+            assertUrlPath(path: string): Chainable<void>
         }
     }
 }
@@ -23,5 +20,8 @@ export interface testData {
         "lastName": string,
         "phoneNumber": string,
         "password": string
+    },
+    "url":{
+        "homePath": string
     }
 }
