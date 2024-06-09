@@ -13,7 +13,7 @@
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
 
-Cypress.Commands.add('openSite',()=>{
+Cypress.Commands.add('openSite', () => {
     cy.visit("/")
     cy.clearAllSessionStorage({ log: true })
 })
@@ -29,6 +29,10 @@ Cypress.Commands.add('selectCategory', (category) => {
             cy.wrap($el).click();
         }
     })
+})
+
+Cypress.Commands.add('assertUrlPath', (path) => {
+    cy.location('pathname').should('eq', path);
 })
 
 // -- This is a child command --

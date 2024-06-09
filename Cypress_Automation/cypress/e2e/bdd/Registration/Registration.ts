@@ -67,5 +67,5 @@ afterEach('the user logs out from the account', () => {
     accountPage.clickLogoutButton();
     logoutPage.assertSuccessfulLogout();
     logoutPage.clickContinueButton();
-    homePage.assertHome()
+    cy.assertUrlPath(userData.url.homePath)
 })
