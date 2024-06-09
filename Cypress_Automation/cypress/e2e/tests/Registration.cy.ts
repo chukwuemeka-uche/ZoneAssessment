@@ -10,7 +10,7 @@ const successPage = new SuccessPage();
 const accountPage = new AccountPage();
 const logoutPage = new LogoutPage();
 
-describe("", () => {
+describe("Registration Test Suite", () => {
     beforeEach(function () {
         cy.openSite();
     })
@@ -55,6 +55,6 @@ describe("", () => {
         logoutPage.clickContinueButton();
 
         //Verify that user is returned to Home page
-        homePage.assertHomeURL()
+        homePage.assertHome()
     })
 })

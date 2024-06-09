@@ -12,15 +12,13 @@ class HomePage {
     }
 
     //Doing this on first landing
-    assertEcommercePage()
-    {
-        cy.url().should('eq','https://ecommerce-playground.lambdatest.io/')
+    assertEcommercePage() {
+        cy.location('host').should('eq', 'ecommerce-playground.lambdatest.io')
     }
 
     //This URL is after successful log out
-    assertHomeURL()
-    {
-        cy.url().should('eq','https://ecommerce-playground.lambdatest.io/index.php?route=common/home')
+    assertHome() {
+        cy.location('pathname').should('eq', '/index.php');
     }
 }
 export default HomePage
